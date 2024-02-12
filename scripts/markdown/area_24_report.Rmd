@@ -2,169 +2,686 @@
 title: 'Area 24: Summary of observations and preliminary escapement estimates'
 author: "South Coast StA"
 date: 'Last Update: `r Sys.Date()`'
-output: word_document
-output: html_document
+output: 
+  word_document:
+    reference_docx: word-ref-style.docx
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = F, warning=F, message=F)
 
 
+# Load libraries --------------------------
+library(tidyverse)
+library(readxl)
+library(here)
+library(bookdown)
+library(kableExtra)
+
+
+
+# Helpers --------------------------
+"%notin%" <- Negate("%in%")
+analysis_year <- 2023
+
+
+
+
+# =================== LOAD DATA ===================
+
+# SIL+AUC Database table exports --------------------------
+# AUC_DataAnalysisTable: 
+  # readxl 
+
+# EscEstAUCResults: 
+  # source() 
+
+# EscEstSppHeader: 
+  # source() 
+
+
+
+# Environmental --------------------------
+a24_hydromet <- list.files(here("data", "enviro", "area24"), pattern="HydrometData", full.names=T) %>%
+  purrr::set_names(
+    list.files(here("data", "enviro", "area24"), pattern = "HydrometData", full.names = F)) %>%
+  map(~readxl::read_excel(path = .x, trim_ws=T), id = "path") %>% 
+  map(~mutate(.x, across(everything(), as.character))) %>%  
+  list_rbind(names_to = "file_source") %>% 
+  mutate(file_source = sub('Water.*', '', file_source)) %>% 
+  rename(system = file_source)
+
+
+
+
+# Survey and run-timing tables --------------------------
+
+
+
+
+
+
+
+# Biosamples --------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# =================== FIGURE FUNCTIONS ===================
+
+plotCountsHydro <- function(system_name, ){
+  ggplot() +
+    geom_bar(data = here("data", "sil-auc-db", ))
+}
 
 
 
 ```
 
+\newpage
 
-**# Overview**
-## 2023 Operational summary	 
+# **Overview**
+## `r analysis_year` Operational summary	 
+
+&NewLine;
+
+```{r ops-legend}
+# Weekly in-season update table legends here -------------
+
+# weekly_inseason %>%
+#   kbl(align="c", caption="The raw (i.e. unexpanded for observer efficiency) Peak Live+Dead counts of adult salmon by DFO Statistical Week for each species.  Underline: 1-9% spawning, Italics: 10-49% spawning, Bold: >50% spawning.") %>%
+#   kable_paper("hover", full_width=T, position = "center") 
+```
+
+Sockeye
+
+```{r}
+# Weekly in-season update tables here -------------
+
+```
+
+&NewLine;
+
+Coho
+
+```{r}
+# Weekly in-season update tables here -------------
+
+```
+
+&NewLine;
+
+Chum
+
+```{r}
+# Weekly in-season update tables here -------------
+
+```
+
+&NewLine;
+
+Chinook
+
+```{r}
+# Weekly in-season update tables here -------------
+
+```
+
+&NewLine;
+
+&NewLine;
+
 ## Escapement survey review meeting	 
+
 ## Other data and activities
 
-**# Bedwell System (Bedwell & Ursus)**	
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+# **Bedwell System (Bedwell & Ursus)**	
 ## Stream summary	
 ## Survey results and escapement estimates	
-## Environmental conditions	
-## Update to stream survey protocols
-## Enhancement
-## Biosamples
-## Concerns and comments
 
-**# Cypre River**	
+**Survey crew:**
+
+**Stock Assessment technician:**
+
+&NewLine;
+
+&NewLine;
+
+## Environmental conditions	
+## Update to stream survey protocols 
+## Enhancement 
+## Biosamples 
+## Concerns and comments 
+
+\newpage
+
+
+
+
+
+
+
+
+
+
+
+# **Cypre River**	
 ## Stream summary	
 ## Survey results and escapement estimates	
-## Environmental conditions	
-## Update to stream survey protocols
-## Enhancement
-## Biosamples
-## Concerns and comments
 
-**# Kennedy River (Upper)**
+**Survey crew:**
+
+**Stock Assessment technician:**
+
+&NewLine;
+
+&NewLine;
+
+## Environmental conditions	
+## Update to stream survey protocols 
+## Enhancement 
+## Biosamples 
+## Concerns and comments 
+
+\newpage
+
+
+
+
+
+
+
+# **Kennedy River (Upper)**
 ## Stream summary	
 ## Survey results and escapement estimates	
-## Environmental conditions	
-## Update to stream survey protocols
-## Enhancement
-## Biosamples
-## Concerns and comments
 
-**# Megin River**
+**Survey crew:**
+
+**Stock Assessment technician:**
+
+&NewLine;
+
+&NewLine;
+
+## Environmental conditions	
+## Update to stream survey protocols 
+## Enhancement 
+## Biosamples 
+## Concerns and comments 
+
+\newpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+# **Megin River** 
 ## Stream summary	
 ## Survey results and escapement estimates	
-## Environmental conditions	
-## Update to stream survey protocols
-## Enhancement
-## Biosamples
-## Concerns and comments
 
-**# Moyeha River**
+**Survey crew:**
+
+**Stock Assessment technician:**
+
+&NewLine;
+
+&NewLine;
+
+## Environmental conditions	
+## Update to stream survey protocols 
+## Enhancement 
+## Biosamples 
+## Concerns and comments 
+
+\newpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# **Moyeha River**
 ## Stream summary	
 ## Survey results and escapement estimates	
-## Environmental conditions	
-## Update to stream survey protocols
-## Enhancement
-## Biosamples
-## Concerns and comments
 
-**# Tranquil Creek**
+**Survey crew:**
+
+**Stock Assessment technician:**
+
+&NewLine;
+
+&NewLine;
+
+## Environmental conditions	
+## Update to stream survey protocols 
+## Enhancement 
+## Biosamples 
+## Concerns and comments 
+
+\newpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# **Tranquil Creek**
 ## Stream summary	
 ## Survey results and escapement estimates	
-## Environmental conditions	
-## Update to stream survey protocols
-## Enhancement
-## Biosamples
-## Concerns and comments
 
-**# Cone Creek (2)**	
+**Survey crew:**
+
+**Stock Assessment technician:**
+
+&NewLine;
+
+&NewLine;
+
+## Environmental conditions	
+## Update to stream survey protocols 
+## Enhancement 
+## Biosamples 
+## Concerns and comments 
+
+\newpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# **Cone Creek (2)**	
 ## Stream summary	
 ## Survey results and escapement estimates	
-## Environmental conditions	
-## Update to stream survey protocols
-## Enhancement
-## Biosamples
-## Concerns and comments
 
-**# Kennedy Lake and Feeder Streams**
+**Survey crew:**
+
+**Stock Assessment technician:**
+
+&NewLine;
+
+&NewLine;
+
+## Environmental conditions	
+## Update to stream survey protocols 
+## Enhancement 
+## Biosamples 
+## Concerns and comments 
+
+\newpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# **Kennedy Lake and Feeder Streams**
 ## Stream summary	
 ## Survey results and escapement estimates	
-## Environmental conditions	
-## Update to stream survey protocols
-## Enhancement
-## Biosamples
-## Concerns and comments
 
-**# Upper Clayoquot River**	
+**Survey crew:**
+
+**Stock Assessment technician:**
+
+&NewLine;
+
+&NewLine;
+
+## Environmental conditions	
+## Update to stream survey protocols 
+## Enhancement 
+## Biosamples 
+## Concerns and comments 
+
+\newpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# **Upper Clayoquot River**	
 ## Stream summary	
 ## Survey results and escapement estimates	
-## Environmental conditions	
-## Update to stream survey protocols
-## Enhancement
-## Biosamples
-## Concerns and comments
 
-**# Sharp Creek**
+**Survey crew:**
+
+**Stock Assessment technician:**
+
+&NewLine;
+
+&NewLine;
+
+## Environmental conditions	
+## Update to stream survey protocols 
+## Enhancement 
+## Biosamples 
+## Concerns and comments 
+
+\newpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# **Sharp Creek**
 ## Stream summary	
 ## Survey results and escapement estimates	
-## Environmental conditions	
-## Update to stream survey protocols
-## Enhancement
-## Biosamples
-## Concerns and comments
 
-**# Sutton Mill Creeks**
+**Survey crew:**
+
+**Stock Assessment technician:**
+
+&NewLine;
+
+&NewLine;
+
+## Environmental conditions	
+## Update to stream survey protocols 
+## Enhancement 
+## Biosamples 
+## Concerns and comments 
+
+\newpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# **Sutton Mill Creeks**
 ## Stream summary	
 ## Survey results and escapement estimates	
-## Environmental conditions	
-## Update to stream survey protocols
-## Enhancement
-## Biosamples
-## Concerns and comments
 
-**# Warn Bay Creek**
+**Survey crew:**
+
+**Stock Assessment technician:**
+
+&NewLine;
+
+&NewLine;
+
+## Environmental conditions	
+## Update to stream survey protocols 
+## Enhancement 
+## Biosamples 
+## Concerns and comments 
+
+\newpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# **Warn Bay Creek**
 ## Stream summary	
 ## Survey results and escapement estimates	
-## Environmental conditions	
-## Update to stream survey protocols
-## Enhancement
-## Biosamples
-## Concerns and comments
 
-**# Wood Islets Creek (Fundy)**	
+**Survey crew:**
+
+**Stock Assessment technician:**
+
+&NewLine;
+
+&NewLine;
+
+## Environmental conditions	
+## Update to stream survey protocols 
+## Enhancement 
+## Biosamples 
+## Concerns and comments 
+
+\newpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# **Wood Islets Creek (Fundy)**	
 ## Stream summary	
 ## Survey results and escapement estimates	
-## Environmental conditions	
-## Update to stream survey protocols
-## Enhancement
-## Biosamples
-## Concerns and comments
 
-**# Sand River**
+**Survey crew:**
+
+**Stock Assessment technician:**
+
+&NewLine;
+
+&NewLine;
+
+## Environmental conditions	
+## Update to stream survey protocols 
+## Enhancement 
+## Biosamples 
+## Concerns and comments 
+
+\newpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# **Sand River**
 ## Stream summary	
 ## Survey results and escapement estimates	
-## Environmental conditions	
-## Update to stream survey protocols
-## Enhancement
-## Biosamples
-## Concerns and comments
 
-**# Muiel Lake Creek**
+**Survey crew:**
+
+**Stock Assessment technician:**
+
+&NewLine;
+
+&NewLine;
+
+## Environmental conditions	
+## Update to stream survey protocols 
+## Enhancement 
+## Biosamples 
+## Concerns and comments 
+
+\newpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+# **Muiel Lake Creek**
 ## Stream summary	
 ## Survey results and escapement estimates	
-## Environmental conditions	
-## Update to stream survey protocols
-## Enhancement
-## Biosamples
-## Concerns and comments
 
-**# Escalante River**
+**Survey crew:**
+
+**Stock Assessment technician:**
+
+&NewLine;
+
+&NewLine;
+
+## Environmental conditions	
+## Update to stream survey protocols 
+## Enhancement 
+## Biosamples 
+## Concerns and comments 
+
+\newpage
+
+
+
+
+
+
+
+
+
+
+
+
+# **Escalante River**
 ## Stream summary	
 ## Survey results and escapement estimates	
-## Environmental conditions	
-## Update to stream survey protocols
-## Enhancement
-## Biosamples
-## Concerns and comments
 
+**Survey crew:**
+
+**Stock Assessment technician:**
+
+&NewLine;
+
+&NewLine;
+
+## Environmental conditions	
+## Update to stream survey protocols 
+## Enhancement 
+## Biosamples 
+## Concerns and comments 
+
+\newpage
 
 
 
