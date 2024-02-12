@@ -1,0 +1,222 @@
+---
+title: 'Area 24: Summary of observations and preliminary escapement estimates'
+author: "South Coast StA"
+date: 'Last Update: `r Sys.Date()`'
+output: word_document
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F, warning=F, message=F)
+
+
+
+
+
+```
+
+
+**# Overview**
+## 2023 Operational summary	 
+## Escapement survey review meeting	 
+## Other data and activities
+
+**# Bedwell System (Bedwell & Ursus)**	
+## Stream summary	
+## Survey results and escapement estimates	
+## Environmental conditions	
+## Update to stream survey protocols
+## Enhancement
+## Biosamples
+## Concerns and comments
+
+**# Cypre River**	
+## Stream summary	
+## Survey results and escapement estimates	
+## Environmental conditions	
+## Update to stream survey protocols
+## Enhancement
+## Biosamples
+## Concerns and comments
+
+**# Kennedy River (Upper)**
+## Stream summary	
+## Survey results and escapement estimates	
+## Environmental conditions	
+## Update to stream survey protocols
+## Enhancement
+## Biosamples
+## Concerns and comments
+
+**# Megin River**
+## Stream summary	
+## Survey results and escapement estimates	
+## Environmental conditions	
+## Update to stream survey protocols
+## Enhancement
+## Biosamples
+## Concerns and comments
+
+**# Moyeha River**
+## Stream summary	
+## Survey results and escapement estimates	
+## Environmental conditions	
+## Update to stream survey protocols
+## Enhancement
+## Biosamples
+## Concerns and comments
+
+**# Tranquil Creek**
+## Stream summary	
+## Survey results and escapement estimates	
+## Environmental conditions	
+## Update to stream survey protocols
+## Enhancement
+## Biosamples
+## Concerns and comments
+
+**# Cone Creek (2)**	
+## Stream summary	
+## Survey results and escapement estimates	
+## Environmental conditions	
+## Update to stream survey protocols
+## Enhancement
+## Biosamples
+## Concerns and comments
+
+**# Kennedy Lake and Feeder Streams**
+## Stream summary	
+## Survey results and escapement estimates	
+## Environmental conditions	
+## Update to stream survey protocols
+## Enhancement
+## Biosamples
+## Concerns and comments
+
+**# Upper Clayoquot River**	
+## Stream summary	
+## Survey results and escapement estimates	
+## Environmental conditions	
+## Update to stream survey protocols
+## Enhancement
+## Biosamples
+## Concerns and comments
+
+**# Sharp Creek**
+## Stream summary	
+## Survey results and escapement estimates	
+## Environmental conditions	
+## Update to stream survey protocols
+## Enhancement
+## Biosamples
+## Concerns and comments
+
+**# Sutton Mill Creeks**
+## Stream summary	
+## Survey results and escapement estimates	
+## Environmental conditions	
+## Update to stream survey protocols
+## Enhancement
+## Biosamples
+## Concerns and comments
+
+**# Warn Bay Creek**
+## Stream summary	
+## Survey results and escapement estimates	
+## Environmental conditions	
+## Update to stream survey protocols
+## Enhancement
+## Biosamples
+## Concerns and comments
+
+**# Wood Islets Creek (Fundy)**	
+## Stream summary	
+## Survey results and escapement estimates	
+## Environmental conditions	
+## Update to stream survey protocols
+## Enhancement
+## Biosamples
+## Concerns and comments
+
+**# Sand River**
+## Stream summary	
+## Survey results and escapement estimates	
+## Environmental conditions	
+## Update to stream survey protocols
+## Enhancement
+## Biosamples
+## Concerns and comments
+
+**# Muiel Lake Creek**
+## Stream summary	
+## Survey results and escapement estimates	
+## Environmental conditions	
+## Update to stream survey protocols
+## Enhancement
+## Biosamples
+## Concerns and comments
+
+**# Escalante River**
+## Stream summary	
+## Survey results and escapement estimates	
+## Environmental conditions	
+## Update to stream survey protocols
+## Enhancement
+## Biosamples
+## Concerns and comments
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
