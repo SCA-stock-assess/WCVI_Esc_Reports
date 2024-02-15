@@ -24,6 +24,9 @@ library(kableExtra)
 "%notin%" <- Negate("%in%")
 analysis_year <- 2023
 database_area = "area23-24"
+analysis_area1 <- 24
+analysis_area2 <- 23
+
 
 
 # =================== LOAD DATA ===================
@@ -36,10 +39,10 @@ source(here("scripts", "streamCodeCompile.R"))
 
 
 # Environmental --------------------------
-hydromet <- list.files(paste0(here("data", "enviro"), "/", report_area), 
+hydromet <- list.files(paste0(here("data", "enviro"), "/", "area", analysis_area1), 
                        pattern="HydrometData", full.names=T) %>%
   purrr::set_names(
-    list.files(paste0(here("data", "enviro"), "/", report_area), 
+    list.files(paste0(here("data", "enviro"), "/", "area", analysis_area1), 
                pattern = "HydrometData", full.names = F)) %>%
   map(~readxl::read_excel(path = .x, trim_ws=T), id = "path") %>% 
   map(~mutate(.x, across(everything(), as.character))) %>%  
