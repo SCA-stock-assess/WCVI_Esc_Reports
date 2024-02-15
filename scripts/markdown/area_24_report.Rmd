@@ -23,21 +23,16 @@ library(kableExtra)
 # Helpers --------------------------
 "%notin%" <- Negate("%in%")
 analysis_year <- 2023
-
+analysis_area <- "area24"
 
 
 
 # =================== LOAD DATA ===================
 
 # SIL+AUC Database table exports --------------------------
-# AUC_DataAnalysisTable: 
-  # readxl 
-
-# EscEstAUCResults: 
-  # source() 
-
-# EscEstSppHeader: 
-  # source() 
+  # Read in AUC_DataAnalysisTable, EscEstAUCResults, EscEstSppHeader tables from database: 
+source(here("scripts", "streamCodeCompile.R"))
+  # Loads: dataTable, escEst, escEstNamed, wbdyVals 
 
 
 
@@ -632,7 +627,7 @@ Chinook
 
 
 
-# **Muiel Lake Creek**
+# **Muriel Lake Creek**
 ## Stream summary	
 ## Survey results and escapement estimates	
 
