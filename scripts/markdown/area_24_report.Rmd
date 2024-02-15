@@ -79,15 +79,14 @@ hydromet <- list.files(paste0(here("data", "enviro"), "/", "area", analysis_area
 # =================== FIGURE FUNCTIONS ===================
 
 # plotCountsHydro <- function(system.name, ...){
+#   
 #   ggplot() +
 #     geom_line(data = hydromet %>% filter(SystemName==system.name), ...) +
 #     geom_bar(data = dataTable %>% filter(SystemName==system.name), ...) +
 #     theme_bw()
-#     theme(...) 
+#     theme(...)
+#     
 # }
-
-
-
 ```
 
 \newpage
@@ -180,7 +179,7 @@ Chinook
 \newpage
 
 
-
+![Caption for the picture.](/path/to/image.png)
 
 
 
