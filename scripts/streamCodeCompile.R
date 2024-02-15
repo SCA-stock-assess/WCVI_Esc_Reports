@@ -16,21 +16,22 @@ library(here)
 analysis_year <- 2023
 analysis_area1 <- 24
 analysis_area2 <- 23
+database_area = "area23-24"
 
 
 # ================= READ DATA =================
 
 # AUC Data Analysis table --------------------------
-dataTable <- list.files(here("data", "sil-auc-db", paste0("area", analysis_area1)), pattern="^AUC_DataAnalysisTable", full.names=T) %>%
+dataTable <- list.files(here("data", "sil-auc-db", paste0("/", database_area)), pattern="^AUC_DataAnalysisTable", full.names=T) %>%
   purrr::set_names(
-    list.files(here("data", "sil-auc-db", paste0("area", analysis_area1)), pattern = "^AUC_DataAnalysisTable", full.names = F)) %>%
+    list.files(here("data", "sil-auc-db", paste0("/", database_area)), pattern = "^AUC_DataAnalysisTable", full.names = F)) %>%
   map(~readxl::read_excel(path = .x, trim_ws=T), id = "path") %>%
   list_rbind(names_to = "file_source") %>%
   print()
   
 
 # Esc Estimates Spp table --------------------------
-escEst <- list.files(here("data", "sil-auc-db", paste0("area", analysis_area1)), pattern="^EscEstSppHeader", full.names=T) %>%
+escEst <- list.files(here("data", "sil-auc-db", paste0("/", database_area)), pattern="^EscEstSppHeader", full.names=T) %>%
   map(~readxl::read_excel(path = .x, trim_ws=T), id = "path") %>% 
   list_rbind() 
 
