@@ -23,8 +23,7 @@ library(kableExtra)
 # Helpers --------------------------
 "%notin%" <- Negate("%in%")
 analysis_year <- 2023
-analysis_area <- "area24"
-
+report_area = "area24"
 
 
 # =================== LOAD DATA ===================
@@ -37,9 +36,11 @@ source(here("scripts", "streamCodeCompile.R"))
 
 
 # Environmental --------------------------
-a24_hydromet <- list.files(here("data", "enviro", "area24"), pattern="HydrometData", full.names=T) %>%
+hydromet <- list.files(paste0(here("data", "enviro"), "/", report_area), 
+                       pattern="HydrometData", full.names=T) %>%
   purrr::set_names(
-    list.files(here("data", "enviro", "area24"), pattern = "HydrometData", full.names = F)) %>%
+    list.files(paste0(here("data", "enviro"), "/", report_area), 
+               pattern = "HydrometData", full.names = F)) %>%
   map(~readxl::read_excel(path = .x, trim_ws=T), id = "path") %>% 
   map(~mutate(.x, across(everything(), as.character))) %>%  
   list_rbind(names_to = "file_source") %>% 
@@ -74,10 +75,13 @@ a24_hydromet <- list.files(here("data", "enviro", "area24"), pattern="HydrometDa
 
 # =================== FIGURE FUNCTIONS ===================
 
-plotCountsHydro <- function(system_name, ){
-  ggplot() +
-    geom_bar(data = here("data", "sil-auc-db", ))
-}
+# plotCountsHydro <- function(system.name, ...){
+#   ggplot() +
+#     geom_line(data = hydromet %>% filter(SystemName==system.name), ...) +
+#     geom_bar(data = dataTable %>% filter(SystemName==system.name), ...) +
+#     theme_bw()
+#     theme(...) 
+# }
 
 
 
