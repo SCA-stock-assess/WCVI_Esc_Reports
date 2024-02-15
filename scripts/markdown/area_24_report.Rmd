@@ -23,7 +23,7 @@ library(kableExtra)
 # Helpers --------------------------
 "%notin%" <- Negate("%in%")
 analysis_year <- 2023
-report_area = "area24"
+database_area = "area23-24"
 
 
 # =================== LOAD DATA ===================
