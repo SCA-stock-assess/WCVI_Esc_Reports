@@ -47,7 +47,7 @@ hydromet <- list.files(paste0(here("data", "enviro"), "/", "area", analysis_area
   map(~readxl::read_excel(path = .x, trim_ws=T), id = "path") %>% 
   map(~mutate(.x, across(everything(), as.character))) %>%  
   list_rbind(names_to = "file_source") %>% 
-  mutate(file_source = sub('Water.*', '', file_source)) %>% 
+  mutate(file_source = sub('Water.*', '', "file_source")) %>% 
   rename(system = file_source)
 
 
