@@ -6,7 +6,6 @@ output:
   word_document:
     reference_docx: word-ref-style.docx
 ---
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = F, warning=F, message=F)
 
@@ -17,7 +16,6 @@ library(readxl)
 library(here)
 library(bookdown)
 library(kableExtra)
-
 
 
 # Helpers --------------------------
@@ -92,7 +90,23 @@ hydromet <- list.files(paste0(here("data", "enviro"), "/", "area", analysis_area
 \newpage
 
 # **Overview**
+
+There are almost 60 streams and major tributaries that have records of spawning salmon in Area 24. The priorities for escapement enumeration are the Chinook indicator stocks in the Bedwell River, Tranquil Creek, and Megin River. There is no Coho indicator in Area 24. The Moyeha River was historically a Chinook indicator but was dropped due to logistical difficulties.  Additional systems are surveyed when funding allows and typically less frequently than the indicator systems. Most surveys are conducted using the snorkel method described in the DFO snorkel survey manual, or by stream or bank-walk. Surveys are typically conducted by DFO contractors, First Nations and local enhancement groups.
+
+Enhancement in Area 24 has been primarily done by the Tofino Salmon Enhancement Society, Thornton Creek Enhancement Society, and Kennedy Lake Hatchery operated by Tla-o-qui-aht. The Kennedy River has been enhanced in most years since the mid-1980s, Tranquil Creek since the early 1990s, Cypre River since the late 1990s and Bedwell River since 2008.  Enhancement efforts have focused primarily on Chinook.
+
+
+```{r a24_streams, echo=FALSE, fig.cap="Figure 1-1. Area 24 Survey Streams", out.width = '100%'}
+knitr::include_graphics(here("maps", "area24", "area24_streams.png"))
+```
+
+&NewLine;
+
 ## `r analysis_year` Operational summary	 
+
+```{r esc_col_codes, echo=FALSE, fig.cap="", out.width = '100%'}
+knitr::include_graphics(here("images", "esc_colour_codes.PNG"))
+```
 
 &NewLine;
 
@@ -160,6 +174,22 @@ Chinook
 
 # **Bedwell System (Bedwell & Ursus)**	
 ## Stream summary	
+The Bedwell River and Ursus Creek make up the Bedwell System, which flows southwest into the Bedwell Sound.  The area is remote with the exception of the Clayoquot Wilderness Resort which operates at the mouth of the River. The Bedwell River is fed by glacier snowmelt from many steep tributaries and by Bedwell Lake located almost 30 km upstream from the mouth.  
+
+The lower 6 km of the Bedwell River has been divided into 12-500 m survey sections for salmon enumeration (Figure 2-1). At the top of the survey section on the Bedwell River there is a canyon that is impassible to fish. The largest tributary to the Bedwell is Ursus Creek which historically entered the Bedwell River at survey marker 5.  In the past several years there have been major changes in the stream channel around the confluence with the Ursus. The location of marker 6 in Figure 2-1 is now dry river bed.  The channel cut in 2013/14 is also now dry, and in 2016, a new channel formed that goes from the bottom of the riffle above marker 6 straight to marker 5. The lower 3 km, markers 0 to 6, is the area usually surveyed on the Ursus. 
+
+The system is dynamic, with few or no log jams and no beaver dams. The mainstem channels are generally shallow and wide, and erosion is a problem. Most large woody debris gets washed out.  On a high tide, salt water reaches marker 1. There are several deep pools on the Bedwell between markers 2 and 3, 9 and 10 and below the canyon (marker 12) on the Bedwell. The pool between markers 4 and 5 has been filling-in in recent years and is now only 3-4 feet deep. On Ursus Creek, there are several pools between markers 3 and 6.  
+
+The system is described as ‘great indicator stream’ with generally clear water and pools that have excellent visibility. After heavy rainfall the system will become murky and take up to three days to clear. The water clarity and retainment characteristics are similar to nearby systems Cypre, Tranquil and Moyeha.  Typical flow for the Bedwell system is 1.8 m3/s, compared to 0.4 for Tranquil and 0.8 for Megin.  The Bedwell is considered a relatively cool system, with temperatures slightly cooler than Tranquil.  The Environment Canada Water Survey Station at Tofino Creek (08HB086) has a long record of discharge measurements and can be used as an indicator for discharge at Bedwell.  DFO installed a hydrometric station on the Bedwell in 2015 at marker 8.  Seals are occasionally seen in the estuary but also not considered to be a problem.
+
+Historical spawner survey reports note considerable silt and erosion. The upper reaches of the Ursus, above marker 13, are unlogged, relatively flat, but have experienced a lot of change since the early 2000s.  There was a side channel installed in the lower Bedwell River.
+
+\newpage
+
+```{r area24_bedwell, echo=FALSE, fig.cap="Figure 2-1. The Bedwell/Ursus system habitat units and counting stations.  Map inset shows locations of other systems that are regularly surveyed in Area 24 as well as the location of the Environment Canada hydrometric station at Tofino Creek (08HB086).  Roads, rivers, coastline and elevations are based on the Terrain Resource Information Management (TRIM) digital base maps of British Columbia.  The 2013/14 river change (purple dashed line) shows the approximate location of the Ursus channel as of 2014.  This channel changed in 2016 to join up at marker 5.. Habitat data were mapped in the field and / or digitized from recent high resolution orthophotographs by M.C. Wright and Associates Ltd.", out.width = '100%'}
+knitr::include_graphics(here("maps", "area24", "area24_bedwell.jpg"))
+```
+
 ## Survey results and escapement estimates	
 
 **Survey crew:**
@@ -178,13 +208,23 @@ Chinook
 
 \newpage
 
-
-![Caption for the picture.](/path/to/image.png)
-
-
-
 # **Cypre River**	
 ## Stream summary	
+The Cypre River flows south into Cypress Bay, west of Bedwell Sound in Clayoquot Sound (Figure 3 1).  It is a clean, clear fast flowing system fed by many small tributaries from the surrounding mountains.  The mainstem length is about 21 km and there are many small tributaries.  
+
+Compared to other streams in the area, Cypre flow is moderate; slightly less than the Moyeha and more than Tranquil. The system has a large floodplain and the lower 4 km has a low gradient (i.e. below marker 8). About 8 km upstream from the mouth (i.e. above marker 16) the stream becomes steeper, has two sets of cascades, more boulders and not as much spawning habitat. There is a canyon between survey markers 8 and 9 which is swimmable under most conditions.  There are falls about 13 km upstream from the mouth (marker 26). The closest station where discharge is monitored is at Tofino Creek (Environment Canada Water Survey Station 08HB086).  Low water can be a problem for fish entering the system. In 2012, fish were unable to access the system prior to late September because of low water level (the Tofino gauge was below 0.1 m at the time). 
+
+The lower 13 km of the system is considered suitable and accessible spawning habitat and has been divided into 26 - 500 m sections for salmon enumeration (Figure 3-1). There are many deep pools on the system including Oscar’s Pool (between markers 6 to 7; Named for Oscar Hanson who was one of the early surveyors), the Oxbow Pool (above marker 12), Bouncing Spruce Pool (100 m below marker 15) and the Boulder Pool (above marker 15), Lucky Pool (between markers 20 and 21), and Ice Pool (near marker 25). There is a cave in the Ice Pool. There were three side channels made in the late-90s: at survey marker 12, in the tidal area between markers 0 and 1 and near marker 20.
+
+The historical survey reports tell of frequent erosion, silting and landslides.  Spawner survey reports also frequently note significant amounts of mobile large woody debris causing large areas of scouring in the spawning riffles.  The watershed consists of steep terrain and old growth forests. It was subject to extensive damage from poor logging practices in the 1970s and 80s.  Logging mostly stopped in the 1980s and since then the Cypre habitat has returned to a stable state with excellent fish habitat with spawning stocks that have rebuilt.
+
+\newpage
+
+```{r area24_cypre, echo=FALSE, fig.cap="Figure 3-1. Cypre River counting stations and habitat units.  Map inset shows locations of other systems that are regularly surveyed in Area 24 as well as the location of the Environment Canada hydrometric station at Tofino Creek (08HB086).  Rivers, coastline and elevations are based on the Terrain Resource Information Management (TRIM) digital base maps of British Columbia.  Habitat data were mapped in the field and / or digitized from recent high resolution orthophotographs by M.C. Wright and Associates Ltd.  The positions of survey markers 15 to 26 are approximate.", out.width = '100%'}
+knitr::include_graphics(here("maps", "area24", "area24_cypre.jpg"))
+```
+
+
 ## Survey results and escapement estimates	
 
 **Survey crew:**
@@ -210,7 +250,11 @@ Chinook
 
 
 # **Kennedy River (Upper)**
-## Stream summary	
+## Stream summary
+Upper Kennedy River flows into Kennedy Lake from the northwest (Figure 4-1).  The system has many big, deep pools. The Upper Kennedy River survey markers were originally set-up by an external contractor conducting a detailed assessment of the Kennedy.  Marker 0 is located at upstream location where the survey begins and markers space approximately 100 m apart downstream to marker 93 near the mouth. Many of these 100m markers are missing in recent years.  Despite the differences from the standard marker system (500 m spacing and 0 marker farthest downstream), surveyors continue to use the historical survey marker locations for observations on the Upper Kennedy.
+
+
+
 ## Survey results and escapement estimates	
 
 **Survey crew:**
