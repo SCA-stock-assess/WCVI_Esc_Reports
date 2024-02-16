@@ -100,7 +100,7 @@ Enhancement in Area 24 has been primarily done by the Tofino Salmon Enhancement 
 knitr::include_graphics(here("maps", "area24", "area24_streams.png"))
 ```
 
-&NewLine;
+\newpage
 
 ## `r analysis_year` Operational summary	 
 
@@ -152,9 +152,7 @@ Chinook
 
 ```
 
-&NewLine;
-
-&NewLine;
+\newpage
 
 ## Escapement survey review meeting	 
 
@@ -255,6 +253,17 @@ knitr::include_graphics(here("maps", "area24", "area24_cypre.jpg"))
 # **Kennedy River (Upper)**
 ## Stream summary
 Upper Kennedy River flows into Kennedy Lake from the northwest (Figure 4-1).  The system has many big, deep pools. The Upper Kennedy River survey markers were originally set-up by an external contractor conducting a detailed assessment of the Kennedy.  Marker 0 is located at upstream location where the survey begins and markers space approximately 100 m apart downstream to marker 93 near the mouth. Many of these 100m markers are missing in recent years.  Despite the differences from the standard marker system (500 m spacing and 0 marker farthest downstream), surveyors continue to use the historical survey marker locations for observations on the Upper Kennedy.
+
+
+```{r}
+library(png)
+library(gridExtra)
+img1 <-  rasterGrob(as.raster(readPNG(here("maps", "area24", "area24_kennedy1.png"))), interpolate = FALSE)
+img2 <-  rasterGrob(as.raster(readPNG(here("maps", "area24", "area24_kennedy2.png"))), interpolate = FALSE)
+grid.arrange(img1, img2, ncol = 2)
+```
+
+
 
 
 
