@@ -190,6 +190,8 @@ Historical spawner survey reports note considerable silt and erosion. The upper 
 knitr::include_graphics(here("maps", "area24", "area24_bedwell.jpg"))
 ```
 
+\newpage
+
 ## Survey results and escapement estimates	
 
 **Survey crew:**
@@ -224,6 +226,7 @@ The historical survey reports tell of frequent erosion, silting and landslides. 
 knitr::include_graphics(here("maps", "area24", "area24_cypre.jpg"))
 ```
 
+\newpage
 
 ## Survey results and escapement estimates	
 
@@ -287,6 +290,15 @@ Upper Kennedy River flows into Kennedy Lake from the northwest (Figure 4-1).  Th
 
 # **Megin River** 
 ## Stream summary	
+The lower Megin River flows out of the western end of Megin Lake and southward into Shelter Inlet in Clayoquot Sound (Figure 5-1). The system is remote and access is only available via boat or plane.  Fog is often a problem for accessing the system.  The Megin is located in Strathcona Provincial Park and near the mouth is the Megin River Ecological Reserved which was established in 1981.  The area is unlogged with pristine habitat in the park. As of the early 2000s there have been no survey markers on this system.  Survey sections are estimated using habitat and reference to survey markers is based on historical positions of 19 survey markers, each about 500 m apart.
+
+The lower Megin River is fed by Megin Lake, located about 9.5 km upstream from the mouth, as well as by many small tributaries. The largest tributary is Talbot Creek which joins the lower Megin about 9 km upstream from the mouth (near marker 18).  Megin Lake is fed by the upper Megin River and many small tributaries. The lower Megin has water clarity and retainment characteristics that are quite different from other streams in Area 24.  The system has heavy suspended silt after rains and can take up to 6 days to clear.  Some pools never clear. The Upper Megin, above the lake, is clearer and takes less time to clear after rain.
+
+The Megin River is described as a slow system with many areas of little or no water movement.  Typical flow for the Megin is 0.8 m3/s compared to 1.8 m3/s for the Bedwell River and 0.4 m3/s for Tranquil Creek. The lower Megin has a low gradient (<2%) and mostly consists of wide cobble/gravel bars. There are several deep pools, including the Tailout Pool (marker 18), a deep pool near marker 7 (~10 m depth), and another pool near marker 3. The habitat is generally described as stable. However, in 2014, erosion was noted near marker 1. 
+
+The lower Megin (from the lake to the tidal zone) is surveyed primarily for Chinook and Chum. The upper Megin (above the lake) is surveyed to provide Coho and Sockeye numbers.
+
+
 ## Survey results and escapement estimates	
 
 **Survey crew:**
@@ -321,7 +333,17 @@ Upper Kennedy River flows into Kennedy Lake from the northwest (Figure 4-1).  Th
 
 
 # **Moyeha River**
-## Stream summary	
+## Stream summary
+
+The Moyeha River flows southwest into Moyeha Bay at the head of Herbert Inlet in Clayoquot Sound. The system is located in the traditional territory of the Ahousaht First Nation and in Strathcona Provincial Park.  Access is available only by boat or float plane and the town of Tofino is about 30 km to the south.  
+
+The mainstem is almost 30 km in length and is fed by many short, steep tributaries originating in the surrounding mountains.  The lower Moyeha has a low gradient with wide sand and gravel banks. The gradient becomes slightly steeper above about 6 km from the mouth, and about 14 km from the mouth there is a canyon that is considered a migration barrier (above survey marker 27).  
+
+Compared to other streams in the area, Moyeha has generally moderate flow; slightly more flow than the Cypre River and less than Bedwell System. The water clarity and retainment characteristics are similar to Bedwell, Cypre and Tranquil; it is generally clear but will become murky after heavy rain and take up to three days to clear. 
+
+The watershed is mostly old growth forest which has been largely untouched by logging.  Despite this, the Moyeha changes a lot physically and is subject to erosion.  Historically, the habitat included pools but in recent years the pools have mostly been filled in.  Past surveyor reports often note erosion and scouring.
+
+
 ## Survey results and escapement estimates	
 
 **Survey crew:**
@@ -358,6 +380,16 @@ Upper Kennedy River flows into Kennedy Lake from the northwest (Figure 4-1).  Th
 
 # **Tranquil Creek**
 ## Stream summary	
+
+Tranquil Creek flows south into the head of Tranquil Inlet in Clayoquot Sound. Tranquil is a small, clear system fed mainly by run-off and small surrounding streams (lakes at headwater).  The lower 3.5 km of the system have been divided into seven 500 m sections for salmon enumeration (Figure 7 1). There are falls located about 3.5 km upstream which are considered impassable to fish.  The system has several deep (~6 m), clear pools including pool just below the falls, a small pool just below marker 6, the Mossy Rock Pool below marker 5, the Road Pool between markers 3 and 2, and Dougie’s Pool at marker 2.
+
+The system is generally clear with good visibility except after heavy rainfall when it becomes murky and takes up to three days to clear. The water clarity and retainment characteristics are similar to Cypre, Bedwell and Moyeha. Typical flow for the Tranquil Creek is 0.4 m3/s, compared to 1.8 for Bedwell, and 0.8 for Megin. Tranquil is warmer than Bedwell, but temperature is never an issue for spawning salmon or surveys.  The closest station where discharge is monitored is at Tofino Creek (Environment Canada Water Survey Station 08HB086) or on the Bedwell River since 2015.
+
+Surveyors report frequent erosion events including large slides in 2006 and 2009 which degraded water quality for several weeks during the fall. In late-2011, there was a major flow event which cut a new channel between markers 3 and 2. The event deposited sand downstream to marker 2 and partially filled in Dougie’s Pool. Ongoing erosion is reported above marker 3 where the system is eating away at alders on the bank.  There is a small alder log-jam below marker 3. Most of area around the stream has been logged, although near survey maker 6 there are a few very old cedars.  
+
+Salmon enhancement started on the Tranquil in 1990 by Tofino Salmon Enhancement Society and the Thornton Creek Hatchery.  Chinook and Coho Salmon continue to be enhanced.
+
+
 ## Survey results and escapement estimates	
 
 **Survey crew:**
@@ -429,7 +461,13 @@ Upper Kennedy River flows into Kennedy Lake from the northwest (Figure 4-1).  Th
 
 
 # **Kennedy Lake and Feeder Streams**
-## Stream summary	
+## Stream summary
+
+Kennedy Lake is a large watershed that is made up of several areas that are assessed independently. The lake is 6542 ha and has a perimeter of 133.5 km. It is fed by several rivers and many small streams, and drains into the Lower Kennedy River in a westerly direction.  
+
+The Kennedy Lake and Clayoquot Arm shores are surveyed by boat for Sockeye Lake spawners. The Upper Kennedy River (northeast end of lake) is surveyed via swim survey (next section). In addition, some small tributaries are surveyed by CWFS, often in relation to habitat work. In 2017, these included the Conference Creek Watershed Creeks 9 and 13 (southern shore of Kennedy Lake), and Hydro Hill West (near the mouth of the upper Kennedy River).
+
+
 ## Survey results and escapement estimates	
 
 **Survey crew:**
