@@ -401,6 +401,10 @@ Surveyors report frequent erosion events including large slides in 2006 and 2009
 Salmon enhancement started on the Tranquil in 1990 by Tofino Salmon Enhancement Society and the Thornton Creek Hatchery.  Chinook and Coho Salmon continue to be enhanced.
 
 
+```{r area24_tranquil, echo=FALSE, fig.cap="Figure 7-1. Tranquil Creek survey marker locations.  Map inset shows locations of other systems that are regularly surveyed in Area 24 as well as the location of the Environment Canada hydrometric station at Tofino Creek (08HB086).  Roads, rivers, coastline and elevations are based on the Terrain Resource Information Management (TRIM) digital base maps of British Columbia.  Habitat data were mapped in the field and / or digitized from recent high resolution orthophotographs by M.C. Wright and Associates Ltd.", out.width = '100%'}
+knitr::include_graphics(here("maps", "area24", "area24_tranquil.jpg"))
+```
+
 ## Survey results and escapement estimates	
 
 **Survey crew:**
