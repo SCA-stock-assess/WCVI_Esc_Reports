@@ -255,17 +255,9 @@ knitr::include_graphics(here("maps", "area24", "area24_cypre.jpg"))
 Upper Kennedy River flows into Kennedy Lake from the northwest (Figure 4-1).  The system has many big, deep pools. The Upper Kennedy River survey markers were originally set-up by an external contractor conducting a detailed assessment of the Kennedy.  Marker 0 is located at upstream location where the survey begins and markers space approximately 100 m apart downstream to marker 93 near the mouth. Many of these 100m markers are missing in recent years.  Despite the differences from the standard marker system (500 m spacing and 0 marker farthest downstream), surveyors continue to use the historical survey marker locations for observations on the Upper Kennedy.
 
 
-```{r}
-library(png)
-library(gridExtra)
-img1 <-  rasterGrob(as.raster(readPNG(here("maps", "area24", "area24_kennedy1.png"))), interpolate = FALSE)
-img2 <-  rasterGrob(as.raster(readPNG(here("maps", "area24", "area24_kennedy2.png"))), interpolate = FALSE)
-grid.arrange(img1, img2, ncol = 2)
-```
-
-
-
-
+```{r, echo=FALSE,out.width="49%", out.height="20%", fig.cap="Figure 3-1. The upper Kennedy River survey markers for the southern sections (left panel) and northern sections (right panel). Map was produced with the Coastal Resource Mapping WebApp available at: www.mapservices.ca/" ,fig.show='hold',fig.align='center'}
+knitr::include_graphics(here("maps", "area24", c("area24_kennedy1.png","area24_kennedy2.png")))
+``` 
 
 ## Survey results and escapement estimates	
 
@@ -300,6 +292,12 @@ grid.arrange(img1, img2, ncol = 2)
 # **Megin River** 
 ## Stream summary	
 The lower Megin River flows out of the western end of Megin Lake and southward into Shelter Inlet in Clayoquot Sound (Figure 5-1). The system is remote and access is only available via boat or plane.  Fog is often a problem for accessing the system.  The Megin is located in Strathcona Provincial Park and near the mouth is the Megin River Ecological Reserved which was established in 1981.  The area is unlogged with pristine habitat in the park. As of the early 2000s there have been no survey markers on this system.  Survey sections are estimated using habitat and reference to survey markers is based on historical positions of 19 survey markers, each about 500 m apart.
+
+
+```{r area24_megin, echo=FALSE, fig.cap="Figure 4-1. The approximate location of Megin River counting stations. Roads, rivers, coastline and elevations are based on the Terrain Resource Information Management (TRIM) digital base maps of British Columbia. Reference to survey markers are based on historical positions and should be updated if new markers are installed. Map inset shows locations of other well-sampled systems in the area and also the location of the Environment Canada monitoring station at Tofino Creek (08HB086).", out.width = '100%'}
+knitr::include_graphics(here("maps", "area24", "area24_megin.png"))
+```
+
 
 The lower Megin River is fed by Megin Lake, located about 9.5 km upstream from the mouth, as well as by many small tributaries. The largest tributary is Talbot Creek which joins the lower Megin about 9 km upstream from the mouth (near marker 18).  Megin Lake is fed by the upper Megin River and many small tributaries. The lower Megin has water clarity and retainment characteristics that are quite different from other streams in Area 24.  The system has heavy suspended silt after rains and can take up to 6 days to clear.  Some pools never clear. The Upper Megin, above the lake, is clearer and takes less time to clear after rain.
 
@@ -346,12 +344,16 @@ The lower Megin (from the lake to the tidal zone) is surveyed primarily for Chin
 
 The Moyeha River flows southwest into Moyeha Bay at the head of Herbert Inlet in Clayoquot Sound. The system is located in the traditional territory of the Ahousaht First Nation and in Strathcona Provincial Park.  Access is available only by boat or float plane and the town of Tofino is about 30 km to the south.  
 
+
 The mainstem is almost 30 km in length and is fed by many short, steep tributaries originating in the surrounding mountains.  The lower Moyeha has a low gradient with wide sand and gravel banks. The gradient becomes slightly steeper above about 6 km from the mouth, and about 14 km from the mouth there is a canyon that is considered a migration barrier (above survey marker 27).  
 
 Compared to other streams in the area, Moyeha has generally moderate flow; slightly more flow than the Cypre River and less than Bedwell System. The water clarity and retainment characteristics are similar to Bedwell, Cypre and Tranquil; it is generally clear but will become murky after heavy rain and take up to three days to clear. 
 
 The watershed is mostly old growth forest which has been largely untouched by logging.  Despite this, the Moyeha changes a lot physically and is subject to erosion.  Historically, the habitat included pools but in recent years the pools have mostly been filled in.  Past surveyor reports often note erosion and scouring.
 
+```{r area24_moyeha, echo=FALSE, fig.cap="Figure 6-1. Moyeha River counting stations and habitat units.  Map inset shows locations of other systems that are regularly surveyed in Area 24 as well as the location of the Environment Canada hydrometric station at Tofino Creek (08HB086). Rivers, coastline and elevations are based on the Terrain Resource Information Management (TRIM) digital base maps of British Columbia. Habitat data were mapped in the field and / or digitized from recent high resolution orthophotographs by M.C. Wright and Associates Ltd.", out.width = '100%'}
+knitr::include_graphics(here("maps", "area24", "area24_moyeha.jpg"))
+```
 
 ## Survey results and escapement estimates	
 
