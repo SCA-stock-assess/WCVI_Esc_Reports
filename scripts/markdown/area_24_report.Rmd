@@ -53,11 +53,15 @@ hydromet <- list.files(paste0(here("data", "enviro"), "/", "area", analysis_area
 
 # Survey and run-timing tables --------------------------
 
+# Weekly Survey tables from Excel------------------------
+weekly_inseason <- readxl::read_excel(here("data", "weekly-in-season", "2023 Weekly In-season Escapement Report.xlsx"), sheet="River Matrix")
+  
+weekly_inseason <- weekly_inseason[-c(1:7),c(3:33, 43)]%>%
+  filter(.[[1]] == 24)
 
+template_col<-readxl::read_excel(here("data", "weekly-in-season", "Template_col.xlsx"))
 
-
-
-
+colnames(weekly_inseason) = colnames(template_col)
 
 # Biosamples --------------------------
 
@@ -85,6 +89,7 @@ hydromet <- list.files(paste0(here("data", "enviro"), "/", "area", analysis_area
 #     theme(...)
 #     
 # }
+
 ```
 
 \newpage
@@ -115,22 +120,36 @@ knitr::include_graphics(here("images", "esc_colour_codes.PNG"))
 # weekly_inseason %>%
 #   kbl(align="c", caption="The raw (i.e. unexpanded for observer efficiency) Peak Live+Dead counts of adult salmon by DFO Statistical Week for each species.  Underline: 1-9% spawning, Italics: 10-49% spawning, Bold: >50% spawning.") %>%
 #   kable_paper("hover", full_width=T, position = "center") 
+
 ```
 
 Sockeye
 
-```{r, echo=FALSE, fig.cap="", out.width = '90%'}
-knitr::include_graphics(here("images", "sockeye_weekly.png"))
+```{r}
 
 # Weekly in-season update tables here -------------
+
+# Doesn't work becauyse this is for HTML===========================
+
+#weekly_inseason %>%
+ # filter(Species == "Sockeye") %>%
+#kbl(align="c", caption="The raw (i.e. unexpanded for observer efficiency) Peak Live+Dead #counts of adult salmon by DFO Statistical Week for each species.  Underline: 1-9% #spawning, Italics: 10-49% spawning, Bold: >50% spawning.") %>%
+   #kable_paper("hover", full_width=T, position = "center")
+#==================================================================
+
+#Kind of works?
+
+# sockeye_table<-weekly_inseason %>%
+#  filter(Species == "Sockeye") %>%
+#  flextable()
+
 
 ```
 
 
 Coho
 
-```{r, echo=FALSE, fig.cap="", out.width = '90%'}
-knitr::include_graphics(here("images", "coho_weekly.png"))
+```{r}
 
 # Weekly in-season update tables here -------------
 
@@ -139,8 +158,7 @@ knitr::include_graphics(here("images", "coho_weekly.png"))
 
 Chum
 
-```{r, echo=FALSE, fig.cap="", out.width = '90%'}
-knitr::include_graphics(here("images", "chum_weekly.png"))
+```{r}
 
 # Weekly in-season update tables here -------------
 
@@ -149,8 +167,7 @@ knitr::include_graphics(here("images", "chum_weekly.png"))
 
 Chinook
 
-```{r, echo=FALSE, fig.cap="", out.width = '90%'}
-knitr::include_graphics(here("images", "chinook_weekly.png"))
+```{r}
 
 # Weekly in-season update tables here -------------
 
