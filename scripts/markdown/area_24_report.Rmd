@@ -104,11 +104,10 @@ knitr::include_graphics(here("maps", "area24", "area24_streams.png"))
 
 ## `r analysis_year` Operational summary	 
 
-```{r esc_col_codes, echo=FALSE, fig.cap="", out.width = '100%'}
+```{r esc_col_codes, echo=FALSE, fig.cap="", out.width = '90%', out.height='60%'}
 knitr::include_graphics(here("images", "esc_colour_codes.PNG"))
 ```
 
-&NewLine;
 
 ```{r ops-legend}
 # Weekly in-season update table legends here -------------
@@ -120,34 +119,39 @@ knitr::include_graphics(here("images", "esc_colour_codes.PNG"))
 
 Sockeye
 
-```{r}
+```{r, echo=FALSE, fig.cap="", out.width = '90%'}
+knitr::include_graphics(here("images", "sockeye_weekly.png"))
+
 # Weekly in-season update tables here -------------
 
 ```
 
-&NewLine;
 
 Coho
 
-```{r}
+```{r, echo=FALSE, fig.cap="", out.width = '90%'}
+knitr::include_graphics(here("images", "coho_weekly.png"))
+
 # Weekly in-season update tables here -------------
 
 ```
 
-&NewLine;
 
 Chum
 
-```{r}
+```{r, echo=FALSE, fig.cap="", out.width = '90%'}
+knitr::include_graphics(here("images", "chum_weekly.png"))
+
 # Weekly in-season update tables here -------------
 
 ```
 
-&NewLine;
 
 Chinook
 
-```{r}
+```{r, echo=FALSE, fig.cap="", out.width = '90%'}
+knitr::include_graphics(here("images", "chinook_weekly.png"))
+
 # Weekly in-season update tables here -------------
 
 ```
@@ -294,7 +298,7 @@ knitr::include_graphics(here("maps", "area24", c("area24_kennedy1.png","area24_k
 The lower Megin River flows out of the western end of Megin Lake and southward into Shelter Inlet in Clayoquot Sound (Figure 5-1). The system is remote and access is only available via boat or plane.  Fog is often a problem for accessing the system.  The Megin is located in Strathcona Provincial Park and near the mouth is the Megin River Ecological Reserved which was established in 1981.  The area is unlogged with pristine habitat in the park. As of the early 2000s there have been no survey markers on this system.  Survey sections are estimated using habitat and reference to survey markers is based on historical positions of 19 survey markers, each about 500 m apart.
 
 
-```{r area24_megin, echo=FALSE, fig.cap="Figure 4-1. The approximate location of Megin River counting stations. Roads, rivers, coastline and elevations are based on the Terrain Resource Information Management (TRIM) digital base maps of British Columbia. Reference to survey markers are based on historical positions and should be updated if new markers are installed. Map inset shows locations of other well-sampled systems in the area and also the location of the Environment Canada monitoring station at Tofino Creek (08HB086).", out.width = '100%'}
+```{r area24_megin, echo=FALSE, fig.cap="Figure 5-1. The approximate location of Megin River counting stations. Roads, rivers, coastline and elevations are based on the Terrain Resource Information Management (TRIM) digital base maps of British Columbia. Reference to survey markers are based on historical positions and should be updated if new markers are installed. Map inset shows locations of other well-sampled systems in the area and also the location of the Environment Canada monitoring station at Tofino Creek (08HB086).", out.width = '100%'}
 knitr::include_graphics(here("maps", "area24", "area24_megin.png"))
 ```
 
@@ -482,6 +486,9 @@ Kennedy Lake is a large watershed that is made up of several areas that are asse
 
 The Kennedy Lake and Clayoquot Arm shores are surveyed by boat for Sockeye Lake spawners. The Upper Kennedy River (northeast end of lake) is surveyed via swim survey (next section). In addition, some small tributaries are surveyed by CWFS, often in relation to habitat work. In 2017, these included the Conference Creek Watershed Creeks 9 and 13 (southern shore of Kennedy Lake), and Hydro Hill West (near the mouth of the upper Kennedy River).
 
+```{r, echo=FALSE, fig.cap="Figure 9-1 Kennedy Lake survey areas. ArcGIS Web Application (mapservices.ca)", out.width = '100%'}
+knitr::include_graphics(here("maps", "area24", "Lake.png"))
+```
 
 ## Survey results and escapement estimates	
 
@@ -757,7 +764,7 @@ The Kennedy Lake and Clayoquot Arm shores are surveyed by boat for Sockeye Lake 
 
 
 # **Escalante River**
-## Stream summary	
+## Stream summary
 ## Survey results and escapement estimates	
 
 **Survey crew:**
@@ -773,6 +780,10 @@ The Kennedy Lake and Clayoquot Arm shores are surveyed by boat for Sockeye Lake 
 ## Enhancement 
 ## Biosamples 
 ## Concerns and comments 
+
+```{r area24_kennedy_lake, echo=FALSE, fig.cap="", out.width = '100%'}
+knitr::include_graphics(here("images", "area24_escalante.jpg"))
+```
 
 \newpage
 
