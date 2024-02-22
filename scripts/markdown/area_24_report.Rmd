@@ -57,12 +57,14 @@ hydromet <- list.files(paste0(here("data", "enviro"), "/", "area", analysis_area
 # Weekly Survey tables from Excel------------------------
 weekly_inseason <- readxl::read_excel(here("data", "weekly-in-season", "2023 Weekly In-season Escapement Report.xlsx"), sheet="River Matrix")
   
-weekly_inseason <- weekly_inseason[-c(1:7),c(3:33, 43)]%>%
+weekly_inseason <- weekly_inseason[-c(1:7),c(3:27, 43)]%>%
   filter(.[[1]] == 24)
 
 template_col<-readxl::read_excel(here("data", "weekly-in-season", "Template_col.xlsx"))
 
 colnames(weekly_inseason) = colnames(template_col)
+
+weekly_inseason <- weekly_inseason %>% filter_at(vars(-Area, -FN_Territory, -System, -Species), any_vars(!is.na(.)))
 
 # Biosamples --------------------------
 
@@ -142,7 +144,7 @@ Sockeye
 set_flextable_defaults(
   theme_fun = "theme_box",
   padding = 4,
-  font.size = 5,
+  font.size = 4,
   font.color = "#000000",
   border.color = "#ABABAB",
   text.align = "center",
@@ -151,7 +153,14 @@ set_flextable_defaults(
 sockeye_ft <- flextable(weekly_inseason%>%
             filter(Species=="Sockeye"))
 
-fit_to_width(sockeye_ft, max_width = 6.5)
+sockeye_ftcor <- set_table_properties(sockeye_ft, width = 1, layout = "autofit")
+
+sockeye_ftcor <- bg(sockeye_ftcor, i= ~ Est_vs_12yr_Avg<0.25, j= ~ Est_vs_12yr_Avg, bg= "red")%>%
+  
+
+sockeye_ftcor
+
+# fit_to_width(sockeye_ft, max_width = 6.5) does fit to page well, but text is far too small.
 
 
 ```
