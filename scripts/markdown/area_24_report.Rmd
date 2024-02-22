@@ -5,6 +5,7 @@ date: 'Last Update: `r Sys.Date()`'
 output: 
   word_document:
     reference_docx: word-ref-style.docx
+    fig_caption: TRUE
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = F, warning=F, message=F)
@@ -16,7 +17,7 @@ library(readxl)
 library(here)
 library(bookdown)
 library(kableExtra)
-
+library(flextable)
 
 # Helpers --------------------------
 "%notin%" <- Negate("%in%")
@@ -138,10 +139,19 @@ Sockeye
 #==================================================================
 
 #Kind of works?
+set_flextable_defaults(
+  theme_fun = "theme_box",
+  padding = 4,
+  font.size = 5,
+  font.color = "#000000",
+  border.color = "#ABABAB",
+  text.align = "center",
+)
 
-# sockeye_table<-weekly_inseason %>%
-#  filter(Species == "Sockeye") %>%
-#  flextable()
+sockeye_ft <- flextable(weekly_inseason%>%
+            filter(Species=="Sockeye"))
+
+fit_to_width(sockeye_ft, max_width = 6.5)
 
 
 ```
