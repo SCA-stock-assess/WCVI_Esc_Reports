@@ -18,6 +18,7 @@ library(here)
 library(bookdown)
 library(kableExtra)
 library(flextable)
+library(RColorBrewer)
 
 # Helpers --------------------------
 "%notin%" <- Negate("%in%")
@@ -38,10 +39,10 @@ source(here("scripts", "streamCodeCompile.R"))
 
 
 # Environmental --------------------------
-hydromet <- list.files(paste0(here("data", "enviro"), "/", "area", analysis_area1), 
+hydromet <- list.files(paste0(here("data", "enviro"), "/", "area23-24"), 
                        pattern="HydrometData", full.names=T) %>%
   purrr::set_names(
-    list.files(paste0(here("data", "enviro"), "/", "area", analysis_area1), 
+    list.files(paste0(here("data", "enviro"), "/", "area23-24"), 
                pattern = "HydrometData", full.names = F)) %>%
   map(~readxl::read_excel(path = .x, trim_ws=T), id = "path") %>% 
   map(~mutate(.x, across(everything(), as.character))) %>%  
@@ -155,7 +156,7 @@ sockeye_ft <- flextable(weekly_inseason%>%
 
 sockeye_ftcor <- set_table_properties(sockeye_ft, width = 1, layout = "autofit")
 
-sockeye_ftcor <- bg(sockeye_ftcor, i= ~ Est_vs_12yr_Avg<0.25, j= ~ Est_vs_12yr_Avg, bg= "red")%>%
+sockeye_ftcor <- bg(sockeye_ftcor, i= ~ Est_vs_12yr_Avg<0.25, j= ~ Est_vs_12yr_Avg, bg= "red")
   
 
 sockeye_ftcor
@@ -232,6 +233,25 @@ knitr::include_graphics(here("maps", "area24", "area24_bedwell.jpg"))
 
 ## Survey results and escapement estimates	
 
+```{r}
+ggplot((dataTable %>% 
+          filter(Section_AreaInspected == "BEDWELL RIVER")), aes(x=SDate, y=LiveAdults))+
+  geom_col(aes(fill=LongSpecies))+
+  scale_x_datetime(limits = ymd_h(c("2023-08-15 00", "2023-12-15 00")))+
+  scale_fill_manual(name=NULL,
+                    values=c(brewer.pal(7, "Dark2")))+
+  labs(title="Bedwell River Daily Counts and Water Level", x="Date", y="Estimated Live Adult Counts")+
+  theme_classic()+
+  theme(legend.key.size = unit(10, "pt"))
+
+ggplot(hydromet, aes(x=Time, y=`Sensor Depth(mH20)`))+
+  geom_line()
+
+
+```
+
+
+
 **Survey crew:**
 
 **Stock Assessment technician:**
@@ -268,6 +288,19 @@ knitr::include_graphics(here("maps", "area24", "area24_cypre.jpg"))
 
 ## Survey results and escapement estimates	
 
+```{r}
+ggplot((dataTable %>% 
+          filter(Section_AreaInspected == "CYPRE RIVER")), aes(x=SDate, y=LiveAdults))+
+  geom_col(aes(fill=LongSpecies))+
+   scale_x_datetime(limits = ymd_h(c("2023-08-15 00", "2023-12-15 00")))+
+  scale_fill_manual(name=NULL,
+                    values=c(brewer.pal(7, "Dark2")))+
+  labs(title="Cypre River Daily Counts", x="Date", y="Estimated Live Adult Counts")+
+  theme_classic()+
+  theme(legend.key.size = unit(10, "pt"))
+```
+
+
 **Survey crew:**
 
 **Stock Assessment technician:**
@@ -300,6 +333,19 @@ knitr::include_graphics(here("maps", "area24", c("area24_kennedy1.png","area24_k
 ``` 
 
 ## Survey results and escapement estimates	
+
+```{r}
+ggplot((dataTable %>% 
+          filter(Section_AreaInspected == "KENNEDY RIVER")), aes(x=SDate, y=LiveAdults))+
+  geom_col(aes(fill=LongSpecies))+
+   scale_x_datetime(limits = ymd_h(c("2023-07-15 00", "2023-12-15 00")))+
+  scale_fill_manual(name=NULL,
+                    values=c(brewer.pal(7, "Dark2")))+
+  labs(title="Kennedy River Daily Counts", x="Date", y="Estimated Live Adult Counts")+
+  theme_classic()+
+  theme(legend.key.size = unit(10, "pt"))
+```
+
 
 **Survey crew:**
 
@@ -350,6 +396,19 @@ The lower Megin (from the lake to the tidal zone) is surveyed primarily for Chin
 
 **Survey crew:**
 
+```{r}
+ggplot((dataTable %>% 
+          filter(Section_AreaInspected == "MEGIN RIVER")), aes(x=SDate, y=LiveAdults))+
+  geom_col(aes(fill=LongSpecies))+
+   scale_x_datetime(limits = ymd_h(c("2023-08-15 00", "2023-12-15 00")))+
+  scale_fill_manual(name=NULL,
+                    values=c(brewer.pal(7, "Dark2")))+
+  labs(title="Megin River Daily Counts", x="Date", y="Estimated Live Adult Counts")+
+  theme_classic()+
+  theme(legend.key.size = unit(10, "pt"))
+```
+
+
 **Stock Assessment technician:**
 
 &NewLine;
@@ -399,6 +458,19 @@ knitr::include_graphics(here("maps", "area24", "area24_moyeha.jpg"))
 
 **Survey crew:**
 
+```{r}
+ggplot((dataTable %>% 
+          filter(Section_AreaInspected == "MOYEHA RIVER")), aes(x=SDate, y=LiveAdults))+
+  geom_col(aes(fill=LongSpecies))+
+   scale_x_datetime(limits = ymd_h(c("2023-08-15 00", "2023-12-15 00")))+
+  scale_fill_manual(name=NULL,
+                    values=c(brewer.pal(7, "Dark2")))+
+  labs(title="Moyeha River Daily Counts", x="Date", y="Estimated Live Adult Counts")+
+  theme_classic()+
+  theme(legend.key.size = unit(10, "pt"))
+```
+
+
 **Stock Assessment technician:**
 
 &NewLine;
@@ -447,6 +519,20 @@ knitr::include_graphics(here("maps", "area24", "area24_tranquil.jpg"))
 
 ## Survey results and escapement estimates	
 
+
+```{r}
+ggplot((dataTable %>% 
+          filter(Section_AreaInspected == "TRANQUIL CREEK")), aes(x=SDate, y=LiveAdults))+
+  geom_col(aes(fill=LongSpecies))+
+   scale_x_datetime(limits = ymd_h(c("2023-09-00 00", "2023-12-00 00")))+
+  scale_fill_manual(name=NULL,
+                    values=c(brewer.pal(7, "Dark2")))+
+  labs(title="Tranquil Creek Daily Counts and Water Level", x="Date", y="Estimated Live Adult Counts")+
+  theme_classic()+
+  theme(legend.key.size = unit(10, "pt"))
+```
+
+
 **Survey crew:**
 
 **Stock Assessment technician:**
@@ -482,6 +568,19 @@ knitr::include_graphics(here("maps", "area24", "area24_tranquil.jpg"))
 # **Cone Creek (2)**	
 ## Stream summary	
 ## Survey results and escapement estimates	
+
+```{r}
+ggplot((dataTable %>% 
+          filter(Section_AreaInspected == "CONE CREEKS (2)")), aes(x=SDate, y=LiveAdults))+
+  geom_col(aes(fill=LongSpecies))+
+   scale_x_datetime(limits = ymd_h(c("2023-08-15 00", "2023-12-15 00")))+
+  scale_fill_manual(name=NULL,
+                    values=c(brewer.pal(7, "Dark2")))+
+  labs(title="Cone Creeks Daily Counts", x="Date", y="Estimated Live Adult Counts")+
+  theme_classic()+
+  theme(legend.key.size = unit(10, "pt"))
+```
+
 
 **Survey crew:**
 
@@ -528,6 +627,7 @@ knitr::include_graphics(here("maps", "area24", "Lake.png"))
 
 ## Survey results and escapement estimates	
 
+
 **Survey crew:**
 
 **Stock Assessment technician:**
@@ -564,6 +664,18 @@ knitr::include_graphics(here("maps", "area24", "Lake.png"))
 ## Stream summary	
 ## Survey results and escapement estimates	
 
+```{r}
+ggplot((dataTable %>% 
+          filter(Section_AreaInspected == "CLAYOQUOT RIVER")), aes(x=SDate, y=LiveAdults))+
+  geom_col(aes(fill=LongSpecies))+
+  scale_fill_manual(name=NULL,
+                    values=c(brewer.pal(7, "Dark2")))+
+  labs(title="Clayoquot River Daily Counts", x="Date", y="Estimated Live Adult Counts")+
+  theme_classic()+
+  theme(legend.key.size = unit(10, "pt"))
+```
+
+
 **Survey crew:**
 
 **Stock Assessment technician:**
@@ -581,24 +693,22 @@ knitr::include_graphics(here("maps", "area24", "Lake.png"))
 \newpage
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # **Sharp Creek**
 ## Stream summary	
+
+```{r}
+ggplot((dataTable %>% 
+          filter(Section_AreaInspected == "SHARP CREEK")), aes(x=SDate, y=LiveAdults))+
+  geom_col(aes(fill=LongSpecies))+
+   scale_x_datetime(limits = ymd_h(c("2023-08-15 00", "2023-12-15 00")))+
+  scale_fill_manual(name=NULL,
+                    values=c(brewer.pal(7, "Dark2")))+
+  labs(title="Sharp Creek Daily Counts", x="Date", y="Estimated Live Adult Counts")+
+  theme_classic()+
+  theme(legend.key.size = unit(10, "pt"))
+```
+
+
 ## Survey results and escapement estimates	
 
 **Survey crew:**
@@ -617,24 +727,22 @@ knitr::include_graphics(here("maps", "area24", "Lake.png"))
 
 \newpage
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # **Sutton Mill Creeks**
 ## Stream summary	
+
+```{r}
+ggplot((dataTable %>% 
+          filter(Section_AreaInspected == "SUTTON MILL CREEK")), aes(x=SDate, y=LiveAdults))+
+  geom_col(aes(fill=LongSpecies))+
+   scale_x_datetime(limits = ymd_h(c("2023-08-15 00", "2023-12-15 00")))+
+  scale_fill_manual(name=NULL,
+                    values=c(brewer.pal(7, "Dark2")))+
+  labs(title="Sutton Mill Creek Daily Counts", x="Date", y="Estimated Live Adult Counts")+
+  theme_classic()+
+  theme(legend.key.size = unit(10, "pt"))
+```
+
+
 ## Survey results and escapement estimates	
 
 **Survey crew:**
@@ -671,6 +779,19 @@ knitr::include_graphics(here("maps", "area24", "Lake.png"))
 ## Stream summary	
 ## Survey results and escapement estimates	
 
+```{r}
+ggplot((dataTable %>% 
+          filter(Section_AreaInspected == "WARN BAY CREEK")), aes(x=SDate, y=LiveAdults))+
+  geom_col(aes(fill=LongSpecies))+
+   scale_x_datetime(limits = ymd_h(c("2023-08-15 00", "2023-12-15 00")))+
+  scale_fill_manual(name=NULL,
+                    values=c(brewer.pal(7, "Dark2")))+
+  labs(title="Warn Bay Creek Daily Counts", x="Date", y="Estimated Live Adult Counts")+
+  theme_classic()+
+  theme(legend.key.size = unit(10, "pt"))
+```
+
+
 **Survey crew:**
 
 **Stock Assessment technician:**
@@ -703,7 +824,21 @@ knitr::include_graphics(here("maps", "area24", "Lake.png"))
 
 # **Wood Islets Creek (Fundy)**	
 ## Stream summary	
+
 ## Survey results and escapement estimates	
+
+```{r}
+ggplot((dataTable %>% 
+          filter(Section_AreaInspected == "FUNDY CREEK")), aes(x=SDate, y=LiveAdults))+
+  geom_col(aes(fill=LongSpecies))+
+   scale_x_datetime(limits = ymd_h(c("2023-08-15 00", "2023-12-15 00")))+
+  scale_fill_manual(name=NULL,
+                    values=c(brewer.pal(7, "Dark2")))+
+  labs(title="Fundy Creek Daily Count", x="Date", y="Estimated Live Adult Counts")+
+  theme_classic()+
+  theme(legend.key.size = unit(10, "pt"))
+```
+
 
 **Survey crew:**
 
