@@ -19,6 +19,7 @@ library(bookdown)
 library(kableExtra)
 library(flextable)
 library(RColorBrewer)
+library(lubridate)
 
 # Helpers --------------------------
 "%notin%" <- Negate("%in%")
@@ -47,7 +48,10 @@ hydromet <- list.files(paste0(here("data", "enviro"), "/", "area23-24"),
   map(~readxl::read_excel(path = .x, trim_ws=T), id = "path") %>% 
   map(~mutate(.x, across(everything(), as.character))) %>%  
   list_rbind(names_to = "file_source") %>% 
-  mutate(system = sub('Water.*', '', file_source)) 
+  mutate(system = sub('Water.*', '', file_source))%>%
+  mutate(Time = as.POSIXct(Time))%>%
+  mutate(`Sensor Depth(mH20)` = as.numeric(`Sensor Depth(mH20)`))
+
 
 
 
@@ -232,6 +236,9 @@ knitr::include_graphics(here("maps", "area24", "area24_bedwell.jpg"))
 ## Survey results and escapement estimates	
 
 ```{r}
+
+# Trying to make each plot individually first to test everything
+#Columns counts
 ggplot((dataTable %>% 
           filter(Section_AreaInspected == "BEDWELL RIVER")), aes(x=SDate, y=LiveAdults))+
   geom_col(aes(fill=LongSpecies))+
@@ -242,9 +249,18 @@ ggplot((dataTable %>%
   theme_classic()+
   theme(legend.key.size = unit(10, "pt"))
 
-ggplot(hydromet, aes(x=Time, y=`Sensor Depth(mH20)`))+
+#Water level line
+ggplot(hydromet%>%
+         filter(system == "Bedwell"), aes(x=Time, y=`Sensor Depth(mH20)`))+
   geom_line()
 
+
+# Combine them
+
+#ggplot() +
+ # geom_col(dataTable %>% 
+  #        filter(Section_AreaInspected == "BEDWELL RIVER"), aes(x=SDate, y=LiveAdults))+
+  #geom_line()
 
 ```
 
